@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Space+Grotesk:wght@600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  background-color: #0e1525;
+  background-image:
+    radial-gradient(circle at 15% 20%, rgba(59, 130, 246, 0.08), transparent 28%),
+    radial-gradient(circle at 80% 10%, rgba(34, 211, 238, 0.09), transparent 25%),
+    radial-gradient(circle at 50% 80%, rgba(16, 185, 129, 0.08), transparent 25%);
+  background-repeat: no-repeat;
+}
+
+body {
+  @apply min-h-screen bg-surface text-slate-100 antialiased;
+  font-family: "Roboto", "Space Grotesk", "Inter", system-ui, -apple-system, "BlinkMacSystemFont", "Segoe UI", sans-serif;
+}
+
+
+.card {
+  @apply rounded-2xl bg-card/85 backdrop-blur border border-slate-800/70 shadow-[0_12px_35px_rgba(0,0,0,0.35)];
+}
+
+.pill {
+  @apply inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-medium bg-slate-800 text-slate-200;
+}
+
+.pill-strong {
+  @apply bg-gradient-to-r from-cyan-500/20 to-sky-400/20 border border-accent/40 text-slate-100 shadow-glow;
+}
+
+.pill-open {
+  @apply from-amber-400/30 to-orange-400/20 border-amber-300/60 text-amber-100;
+}
+
+.pill-done {
+  @apply from-emerald-400/30 to-green-400/20 border-emerald-300/60 text-emerald-100;
+}
+
+.pill-total {
+  @apply from-cyan-400/30 to-blue-400/20 border-cyan-300/60 text-cyan-100;
+}
+
+.filter-pill {
+  @apply pill border border-slate-700 bg-slate-800/80 text-slate-100;
+}
+
+.chip {
+  @apply inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-900/70 px-3 py-1.5 text-sm font-semibold text-slate-200 shadow-sm transition hover:border-accent hover:text-accent;
+}
+
+.chip-active {
+  @apply border-accent bg-accent/15 text-accent shadow-glow;
+}
+
+.status-card {
+  @apply card p-4 text-left transition hover:-translate-y-0.5 hover:border-accent/50;
+}
+
+.status-card-active {
+  @apply ring-2 ring-accent/50 border-accent/50;
+}
+
+.count-chip {
+  @apply inline-flex h-9 min-w-[2.5rem] items-center justify-center rounded-full bg-slate-900 px-3 text-lg font-semibold text-white border border-slate-700;
+}
+
+.help-btn {
+  @apply h-8 w-8 rounded-full bg-slate-800/80 text-slate-100 border border-slate-700 font-bold flex items-center justify-center hover:border-accent hover:text-accent transition;
+}
+
+.help-pop {
+  @apply card p-4 border border-accent/40 shadow-glow bg-slate-900/90 backdrop-blur;
+  filter: drop-shadow(0 20px 40px rgba(0,0,0,0.35));
+  z-index: 30;
+}
+
+.icon-btn {
+  @apply h-9 w-9 rounded-full border border-slate-700 bg-slate-800/70 text-slate-100 flex items-center justify-center hover:border-accent hover:text-accent transition disabled:opacity-60 disabled:cursor-not-allowed;
+}
+
+.icon-btn.danger {
+  @apply border-danger/50 text-danger hover:bg-danger/10;
+}
+
+.menu-pop {
+  @apply absolute right-0 top-full mt-2 w-[28rem] rounded-xl border border-slate-700 bg-slate-900/95 backdrop-blur shadow-glow p-3 z-30;
+}
+
+.menu-item {
+  @apply flex w-full items-center gap-2 rounded-lg px-3 py-2 text-sm text-slate-100 hover:bg-slate-800 transition;
+}
+
+.menu-area {
+  @apply absolute right-0 top-0;
+}
+
+.menu-trigger {
+  @apply shadow-lg;
+}
+
+.icon-only {
+  @apply justify-center;
+}
+
+/* hero-mark removed */
+
+.btn {
+  @apply inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2 font-semibold transition duration-150;
+}
+
+.btn-primary {
+  @apply btn bg-gradient-to-r from-accent to-accentMuted text-slate-900 shadow-glow hover:from-cyan-300 hover:to-sky-400 disabled:opacity-60 disabled:cursor-not-allowed;
+}
+
+.btn-ghost {
+  @apply btn bg-slate-800/70 text-slate-100 hover:bg-slate-700/80 border border-slate-800/80 disabled:opacity-60 disabled:cursor-not-allowed;
+}
+
+.input {
+  @apply w-full rounded-lg bg-slate-900/70 border border-slate-800 px-4 py-2 text-slate-100 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-accent;
+}
+
+.badge {
+  @apply px-2 py-1 text-[11px] rounded-full uppercase tracking-wide font-semibold;
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.3);
+  border-radius: 9999px;
+}
