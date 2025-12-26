@@ -11,6 +11,13 @@ Go + Gin API, Vite + React + TypeScript + Tailwind UI
 - App : `/ui/`
 - API : `/api/v1/todos`
 
+### 機能（予定）
+- 優先度
+- 〆切・期日
+- calendar連携
+- サブタスク
+- 別タスクとの紐付け(?)
+
 ### めも
 
 ```cmd
