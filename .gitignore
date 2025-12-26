@@ -1,0 +1,11 @@
+.env
+todo.db
+*.log
+.DS_Store
+
+frontend/node_modules
+frontend/.vite
+frontend/dist
+
+tmp/go-cache
+tmp/api
