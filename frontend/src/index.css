@@ -6,11 +6,10 @@
 
 :root {
   color-scheme: dark;
-  background-color: #0e1525;
+  background-color: #111827;
   background-image:
-    radial-gradient(circle at 15% 20%, rgba(59, 130, 246, 0.08), transparent 28%),
-    radial-gradient(circle at 80% 10%, rgba(34, 211, 238, 0.09), transparent 25%),
-    radial-gradient(circle at 50% 80%, rgba(16, 185, 129, 0.08), transparent 25%);
+    radial-gradient(circle at 20% 15%, rgba(56, 189, 248, 0.12), transparent 38%),
+    radial-gradient(circle at 80% 12%, rgba(14, 165, 233, 0.08), transparent 36%);
   background-repeat: no-repeat;
 }
 
@@ -21,15 +20,15 @@ body {
 
 
 .card {
-  @apply rounded-2xl bg-card/85 backdrop-blur border border-slate-800/70 shadow-[0_12px_35px_rgba(0,0,0,0.35)];
+  @apply rounded-2xl bg-card/90 backdrop-blur border border-slate-800/60 shadow-[0_12px_30px_rgba(2,6,23,0.35)];
 }
 
 .pill {
-  @apply inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-medium bg-slate-800 text-slate-200;
+  @apply inline-flex items-center gap-2 rounded-full border border-slate-700/70 px-3 py-1 text-xs font-medium bg-slate-800/80 text-slate-200;
 }
 
 .pill-strong {
-  @apply bg-gradient-to-r from-cyan-500/20 to-sky-400/20 border border-accent/40 text-slate-100 shadow-glow;
+  @apply bg-gradient-to-r from-cyan-400/15 to-sky-500/15 border border-accent/40 text-slate-100 shadow-glow;
 }
 
 .pill-open {
@@ -49,7 +48,7 @@ body {
 }
 
 .chip {
-  @apply inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-900/70 px-3 py-1.5 text-sm font-semibold text-slate-200 shadow-sm transition hover:border-accent hover:text-accent;
+  @apply inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-800/70 px-3 py-1.5 text-sm font-semibold text-slate-200 transition hover:border-accent hover:text-accent;
 }
 
 .chip-active {
@@ -65,7 +64,27 @@ body {
 }
 
 .count-chip {
-  @apply inline-flex h-9 min-w-[2.5rem] items-center justify-center rounded-full bg-slate-900 px-3 text-lg font-semibold text-white border border-slate-700;
+  @apply inline-flex h-9 min-w-[2.5rem] items-center justify-center rounded-full bg-slate-900/80 px-3 text-lg font-semibold text-white border border-slate-800;
+}
+
+.count-chip-open {
+  @apply bg-green-500/20 text-green-100 border-green-400/40;
+}
+
+.count-chip-done {
+  @apply bg-sky-500/20 text-sky-100 border-sky-400/40;
+}
+
+.priority-pill {
+  @apply inline-flex items-center justify-center gap-1 rounded-full border border-amber-300/40 bg-amber-400/15 px-3 py-1 text-xs font-semibold leading-none text-amber-200;
+}
+
+.deadline-pill {
+  @apply inline-flex items-center justify-center gap-2 rounded-full border border-violet-400/40 bg-violet-500/10 px-3 py-1 text-xs font-semibold leading-none text-violet-200 transition hover:border-violet-300/70;
+}
+
+.deadline-pill-muted {
+  @apply border-slate-700 bg-slate-900/60 text-slate-400 hover:border-slate-600;
 }
 
 .help-btn {
@@ -84,22 +103,6 @@ body {
 
 .icon-btn.danger {
   @apply border-danger/50 text-danger hover:bg-danger/10;
-}
-
-.menu-pop {
-  @apply absolute right-0 top-full mt-2 w-[28rem] rounded-xl border border-slate-700 bg-slate-900/95 backdrop-blur shadow-glow p-3 z-30;
-}
-
-.menu-item {
-  @apply flex w-full items-center gap-2 rounded-lg px-3 py-2 text-sm text-slate-100 hover:bg-slate-800 transition;
-}
-
-.menu-area {
-  @apply absolute right-0 top-0;
-}
-
-.menu-trigger {
-  @apply shadow-lg;
 }
 
 .icon-only {
