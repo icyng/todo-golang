@@ -44,7 +44,12 @@ func (h *TodoHandler) Create(c *gin.Context) {
 		return
 	}
 
-	todo, err := h.uc.Create(c.Request.Context(), req.Title)
+	priority := uint8(3)
+	if req.Priority != nil {
+		priority = *req.Priority
+	}
+
+	todo, err := h.uc.Create(c.Request.Context(), req.Title, priority, req.DueAt)
 	if handleDomainError(c, err) {
 		return
 	}
@@ -63,7 +68,18 @@ func (h *TodoHandler) Update(c *gin.Context) {
 		return
 	}
 
-	todo, err := h.uc.Update(c.Request.Context(), id, req.Title, *req.Done)
+	dueAt := req.DueAt.Time
+	dueAtSet := req.DueAt.Set
+
+	todo, err := h.uc.Update(
+		c.Request.Context(),
+		id,
+		req.Title,
+		*req.Done,
+		req.Priority,
+		dueAt,
+		dueAtSet,
+	)
 	if handleDomainError(c, err) {
 		return
 	}
