@@ -1,6 +1,7 @@
 package rest
 
 import (
+	"errors"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -23,12 +24,10 @@ func handleDomainError(c *gin.Context, err error) bool {
 	if err == nil {
 		return false
 	}
-	switch err {
-	case domain.ErrTodoNotFound:
+	if errors.Is(err, domain.ErrTodoNotFound) {
 		writeError(c, http.StatusNotFound, "todo not found")
 		return true
-	default:
-		writeError(c, http.StatusInternalServerError, err.Error())
-		return true
 	}
+	writeError(c, http.StatusInternalServerError, err.Error())
+	return true
 }
