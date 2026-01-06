@@ -9,3 +9,5 @@ frontend/dist
 
 tmp/go-cache
 tmp/api
+
+staying.md
